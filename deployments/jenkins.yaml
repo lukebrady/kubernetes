@@ -1,0 +1,24 @@
+apiVersion: v1
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        editor: vscode
+    spec:
+      containers:
+      - name: jenkins-lts
+        image: jenkins/jenkins:lts
+        volumeMounts:
+          - name: jenkins-home
+            mountPath:  /data/jenkins/:/var/jenkins_home/
+        resources:
+          limits:
+            memory: "5G"
+            cpu: "1024m"
+        ports:
+          - containerPort: 8080
