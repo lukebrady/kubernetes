@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        editor: vscode
+        app: jenkins
     spec:
       containers:
       - name: jenkins-lts
