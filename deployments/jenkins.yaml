@@ -21,8 +21,8 @@ spec:
             mountPath:  /var/jenkins_home/
         resources:
           limits:
-            memory: "5G"
-            cpu: "1024m"
+            memory: "1024Mi"
+            cpu: "500m"
         ports:
           - containerPort: 8080
       volumes:
