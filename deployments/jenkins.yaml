@@ -17,11 +17,14 @@ spec:
       - name: jenkins-lts
         image: jenkins/jenkins:lts
         volumeMounts:
-          - name: jenkins-home
-            mountPath:  /data/jenkins/:/var/jenkins_home/
+          - name: jenkins-data
+            mountPath:  /var/jenkins_home/
         resources:
           limits:
             memory: "5G"
             cpu: "1024m"
         ports:
           - containerPort: 8080
+      volumes:
+      - name: jenkins-data
+        mountPath:  /data/jenkins/
