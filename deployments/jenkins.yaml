@@ -27,4 +27,6 @@ spec:
           - containerPort: 8080
       volumes:
       - name: jenkins-data
-        mountPath:  /data/jenkins/
+        hostPath:
+          path:  /data/jenkins/
+          type: Directory 
